@@ -2,8 +2,7 @@
 
 ```bash
 cd ~
-PROFILE_FILE="$HOME/me/.profile.sh"
-echo '[ -f "$PROFILE_FILE" ] && source "$PROFILE_FILE"' >> ~/.bashrc
+echo '[ -f "$HOME/me/.profile.sh" ] && source "$HOME/me/.profile.sh"' >> ~/.bashrc
 git clone https://github.com/kevinfiol/shell.git me
 ```
 
