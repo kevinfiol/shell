@@ -1,0 +1,6 @@
+# Ignore everything
+*
+
+# Allow .sh and .bash files
+!*.sh
+!*.bash
