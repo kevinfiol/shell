@@ -4,3 +4,7 @@
 # But don't ignore .sh and .bash files at the root of the repo
 !/*.sh
 !/*.bash
+
+# ignore work-specific profile and secrets
+.env.sh
+.profile-work.sh
