@@ -1,6 +1,6 @@
 # Ignore everything
 *
 
-# Allow .sh and .bash files
-!*.sh
-!*.bash
+# But don't ignore .sh and .bash files at the root of the repo
+!/*.sh
+!/*.bash
