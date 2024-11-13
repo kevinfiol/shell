@@ -6,6 +6,7 @@ alias m='micro'
 alias cmus:update="cmus-remote -C clear && cmus-remote -C \"add $HOME/me/pidrive/public/Music\" && cmus-remote -C \"update-cache -f\""
 alias where='type'
 alias docker-compose='docker compose'
+alias compose:update='docker compose pull && docker image prune'
 alias serve='sfz --cors --render-index'
 alias ld='lazydocker'
 alias prof="micro $HOME/me/.profile.sh"
