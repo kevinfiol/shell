@@ -32,7 +32,7 @@ alias pgs:up='scp -r * pgs.sh:/'
 
 # set PATH so it includes user's private bin if it exists
 BIN_LOCATION="$HOME/.local/bin"
-[ -d "$BIN_LOCATION" ] && PATH="$HOME/.local/bin:$PATH"
+[ -d "$BIN_LOCATION" ] && PATH="$BIN_LOCATION:$PATH"
 
 WORK_PROFILE="$HOME/me/.profile-work.sh"
 [ -f "$WORK_PROFILE" ] && source "$WORK_PROFILE"
