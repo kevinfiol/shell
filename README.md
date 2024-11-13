@@ -20,3 +20,29 @@ nix-shell '<home-manager>' -A install
 # use unstable channel
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 ```
+
+Example `~/.config/home-manager/home.nix`:
+```nix
+{ config, pkgs, ... }:
+
+{
+  home.username = "kevin";
+  home.homeDirectory = "/home/kevin";
+
+  home.stateVersion = "23.11"; # Please read the comment before changing.
+
+  home.packages = with pkgs; [
+    micro
+  ];
+
+  home.file = {
+  };
+
+  home.sessionVariables = {
+    # EDITOR = "emacs";
+  };
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+}
+```
