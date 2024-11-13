@@ -6,5 +6,5 @@
 !/*.bash
 
 # ignore work-specific profile and secrets
-.env.sh
-.profile-work.sh
+/.env.sh
+/.profile-work.sh
