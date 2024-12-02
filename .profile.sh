@@ -1,5 +1,7 @@
 # allow unfree nix
 export NIXPKGS_ALLOW_UNFREE=1
+# configure git config location
+export GIT_CONFIG_GLOBAL="$HOME/me/.gitconfig"
 
 # convenience aliases
 alias m='micro'
@@ -25,10 +27,15 @@ alias fetch='git fetch'
 alias add='git add -A'
 alias commit='git commit -m '
 alias delete='git push origin --delete'
+alias tags:refresh='git tag -d $(git tag -l) && git fetch --tag'
+alias gpg:generate='gpg --full-gen-key'
+alias gpg:list='gpg --list-secret-keys --keyid-format SHORT'
+alias gpg:edit='gpg --edit-key'
+alias gpg:export='gpg --armor --export'
 
 ## pg.sh aliases
-alias pgs="ssh -i $HOME/.ssh/id_ed25519 pgs.sh"
-alias pgs:up='scp -r * pgs.sh:/'
+alias pgs="ssh -i $HOME/.ssh/pgs_sh pgs.sh"
+alias pgs:help="pgs help"
 
 # set PATH so it includes user's private bin if it exists
 BIN_LOCATION="$HOME/.local/bin"
