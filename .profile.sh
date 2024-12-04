@@ -18,6 +18,7 @@ alias nl="home-manager packages"
 alias switch="nix-channel --update && home-manager switch && nix-collect-garbage"
 alias apt:update="sudo apt update && sudo apt autoclean && sudo apt clean && sudo apt autoremove"
 alias rmm='rm -rf'
+alias hosts='cat $HOME/.ssh/config'
 
 ## git aliases
 alias push='git push origin $(git branch --show-current)'
