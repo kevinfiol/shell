@@ -69,3 +69,7 @@ if which fnm >/dev/null 2>&1; then
     eval "`fnm env`"
     eval "$(fnm env --use-on-cd)"
 fi
+
+# hashlink setup
+HASHLINK_LOCATION="$HOME/.local/bin/hashlink"
+[ -d "$HASHLINK_LOCATION" ] && PATH="$HASHLINK_LOCATION:$PATH"
