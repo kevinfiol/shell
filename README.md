@@ -33,7 +33,19 @@ Example `~/.config/home-manager/home.nix`:
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    micro
+    fnm
+    zola
+    deno
+    lazydocker
+    macchina
+    fx
+  	sfz
+  	dust
+  	yt-dlp
+  	ffmpeg
+  	monolith
+  	foot
+  	haxe
   ];
 
   home.file = {
