@@ -39,13 +39,13 @@ Example `~/.config/home-manager/home.nix`:
     lazydocker
     macchina
     fx
-  	sfz
-  	dust
-  	yt-dlp
-  	ffmpeg
-  	monolith
-  	foot
-  	haxe
+    sfz
+    dust
+    yt-dlp
+    ffmpeg
+    monolith
+    foot
+    haxe
   ];
 
   home.file = {
