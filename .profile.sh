@@ -40,6 +40,7 @@ alias pgs:help="pgs help"
 
 ## server stuff
 alias caddy:start="sudo systemctl start caddy"
+alias caddy:stop="sudo systemctl stop caddy"
 alias caddy:reload="sudo systemctl reload caddy"
 alias caddy:edit="sudo micro /etc/caddy/Caddyfile"
 alias caddy:logs="sudo journalctl -u caddy"
