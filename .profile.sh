@@ -38,6 +38,12 @@ alias gpg:export='gpg --armor --export'
 alias pgs="ssh -i $HOME/.ssh/pgs_sh pgs.sh"
 alias pgs:help="pgs help"
 
+## server stuff
+alias caddy:start="sudo systemctl start caddy"
+alias caddy:reload="sudo systemctl reload caddy"
+alias caddy:edit="sudo micro /etc/caddy/Caddyfile"
+alias caddy:logs="sudo journalctl -u caddy"
+
 # set PATH so it includes user's private bin if it exists
 BIN_LOCATION="$HOME/.local/bin"
 [ -d "$BIN_LOCATION" ] && PATH="$BIN_LOCATION:$PATH"
