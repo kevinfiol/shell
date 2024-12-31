@@ -78,6 +78,12 @@ if which fnm >/dev/null 2>&1; then
     eval "$(fnm env --use-on-cd)"
 fi
 
+# ruby-install/chruby setup
+CHRUBY_SCRIPT="/usr/local/share/chruby/chruby.sh"
+[ -f "$CHRUBY_SCRIPT" ] && source "$CHRUBY_SCRIPT"
+CHRUBY_AUTO_SCRIPT="/usr/local/share/chruby/auto.sh"
+[ -f "$CHRUBY_AUTO_SCRIPT" ] && source "$CHRUBY_AUTO_SCRIPT"
+
 # hashlink setup
 HASHLINK_LOCATION="$HOME/.local/bin/hashlink"
 [ -d "$HASHLINK_LOCATION" ] && PATH="$HASHLINK_LOCATION:$PATH"
