@@ -87,3 +87,12 @@ CHRUBY_AUTO_SCRIPT="/usr/local/share/chruby/auto.sh"
 # hashlink setup
 HASHLINK_LOCATION="$HOME/.local/bin/hashlink"
 [ -d "$HASHLINK_LOCATION" ] && PATH="$HASHLINK_LOCATION:$PATH"
+
+# functions
+kill_on_port() {
+    if [ -z "$1" ]; then
+        echo "Usage: kill_on_port <port>"
+        return 1
+    fi
+    kill -9 $(lsof -t -i :"$1") 2>/dev/null || echo "No process found on port $1"
+}
