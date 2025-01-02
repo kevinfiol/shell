@@ -1,3 +1,5 @@
+# GPG TTY
+export GPG_TTY=$(tty)
 # allow unfree nix
 export NIXPKGS_ALLOW_UNFREE=1
 # configure git config location
