@@ -6,6 +6,8 @@
 !/*.bash
 !/scripts
 !/scripts/*.sh
+!/configs
+!/configs/*
 
 # ignore work-specific profile and secrets
 /.env.sh

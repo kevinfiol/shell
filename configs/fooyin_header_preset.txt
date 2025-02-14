@@ -1,0 +1,2 @@
+Title:
+<sized=0>$if2(%albumartist%,Unknown Artist) $if(%album%,• %album%,Unknown Album) $if(%year%,• %year%,Unknown Album) <alpha=100>$if(%genre%,• %genre%,Unknown Album)
