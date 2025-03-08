@@ -21,6 +21,7 @@ alias switch="nix-channel --update && home-manager switch && nix-collect-garbage
 alias apt:update="sudo apt update && sudo apt autoclean && sudo apt clean && sudo apt autoremove"
 alias rmm='rm -rf'
 alias hosts='cat $HOME/.ssh/config'
+alias pw="pwgen -c -n -y -s -B 16 1 | tr -d '\n' | tee >(wl-copy) && echo"
 
 ## git aliases
 alias push='git push origin $(git branch --show-current)'
@@ -78,6 +79,11 @@ export PATH="$HOME/.deno/bin:$PATH"
 if which fnm >/dev/null 2>&1; then
     eval "`fnm env`"
     eval "$(fnm env --use-on-cd)"
+fi
+
+# mise shims
+if which mise >/dev/null 2>&1; then
+	eval "$(mise activate bash --shims)"
 fi
 
 # ruby-install/chruby setup
