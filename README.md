@@ -14,12 +14,7 @@ From [zero-to-nix](https://zero-to-nix.com/start/install)
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
 # setup home-manager
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-nix-shell '<home-manager>' -A install
-
-# use unstable channel
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix run home-manager/master -- init --switch
 ```
 
 Example `~/.config/home-manager/home.nix`:
