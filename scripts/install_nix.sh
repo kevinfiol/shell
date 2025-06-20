@@ -2,9 +2,7 @@
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
 # setup home-manager
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-nix-shell '<home-manager>' -A install
+nix run home-manager/master -- init --switch
 
-# use unstable channel
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+# cp home.nix
+echo "See home.nix in $HOME/me/scripts/home.nix"
