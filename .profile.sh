@@ -96,6 +96,10 @@ CHRUBY_AUTO_SCRIPT="/usr/local/share/chruby/auto.sh"
 HASHLINK_LOCATION="$HOME/.local/bin/hashlink"
 [ -d "$HASHLINK_LOCATION" ] && PATH="$HASHLINK_LOCATION:$PATH"
 
+# odin setup
+ODIN_LOCATION="$HOME/.local/bin/odin"
+[ -d "$ODIN_LOCATION" ] && PATH="$ODIN_LOCATION:$PATH"
+
 # functions
 kill_on_port() {
     if [ -z "$1" ]; then

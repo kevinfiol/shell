@@ -1,2 +1,13 @@
-Title:
+Go to Playlist > Presets
+
+Clone `Simple Artist/Album/Year`
+
+Adjust the Title to:
+
+```
 <sized=0>$if2(%albumartist%,Unknown Artist) $if(%album%,• %album%,Unknown Album) $if(%year%,• %year%,Unknown Album) <alpha=100>$if(%genre%,• %genre%,Unknown Album)
+```
+
+Then disable editing mode.
+Right click on the headers in the playlist, and select the preset we just created
+GO back to Playlist settings to disable header.
