@@ -15,13 +15,16 @@ alias serve='sfz --cors --render-index'
 alias ld='lazydocker'
 alias prof="micro $HOME/me/.profile.sh"
 alias myenv="micro $HOME/me/.env.sh"
-alias conf="micro $HOME/.config/home-manager/home.nix"
-alias nl="home-manager packages"
-alias switch="nix-channel --update && home-manager switch && nix-collect-garbage"
 alias apt:update="sudo apt update && sudo apt autoclean && sudo apt clean && sudo apt autoremove"
 alias rmm='rm -rf'
 alias hosts='cat $HOME/.ssh/config'
 alias pw="pwgen -c -n -y -s -B 16 1 | tr -d '\n' | tee >(wl-copy) && echo"
+
+## nix related
+alias conf="micro $HOME/.config/home-manager/home.nix"
+alias npl="nix profile list"
+alias nix-clean="nix-collect-garbage && home-manager expire-generations"
+alias switch="home-manager switch --impure && nix-clean"
 
 ## git aliases
 alias push='git push origin $(git branch --show-current)'
@@ -96,11 +99,36 @@ CHRUBY_AUTO_SCRIPT="/usr/local/share/chruby/auto.sh"
 HASHLINK_LOCATION="$HOME/.local/bin/hashlink"
 [ -d "$HASHLINK_LOCATION" ] && PATH="$HASHLINK_LOCATION:$PATH"
 
-# functions
+# utility functions
 kill_on_port() {
     if [ -z "$1" ]; then
         echo "Usage: kill_on_port <port>"
         return 1
     fi
     kill -9 $(lsof -t -i :"$1") 2>/dev/null || echo "No process found on port $1"
+}
+
+## nix profile shorthands
+nps() {
+  if [ -z "$1" ]; then
+    echo "Usage: nps <package-name>"
+    return 1
+  fi
+  nix profile add "github:NixOS/nixpkgs/nixos-25.05#$1"
+}
+
+npu() {
+  if [ -z "$1" ]; then
+    echo "Usage: npu <package-name>"
+    return 1
+  fi
+  nix profile add "github:NixOS/nixpkgs/nixpkgs-unstable#$1"
+}
+
+npr() {
+  if [ -z "$1" ]; then
+    echo "Usage: npr <package-name>"
+    return 1
+  fi
+  nix profile remove "$1"
 }
