@@ -20,12 +20,6 @@ alias rmm='rm -rf'
 alias hosts='cat $HOME/.ssh/config'
 alias pw="pwgen -c -n -y -s -B 16 1 | tr -d '\n' | tee >(wl-copy) && echo"
 
-## nix related
-alias conf="micro $HOME/.config/home-manager/home.nix"
-alias npl="nix profile list"
-alias nix-clean="nix-collect-garbage && home-manager expire-generations"
-alias switch="home-manager switch --impure && nix-clean"
-
 ## git aliases
 alias push='git push origin $(git branch --show-current)'
 alias pull='git pull origin $(git branch --show-current)'
@@ -112,7 +106,13 @@ kill_on_port() {
     kill -9 $(lsof -t -i :"$1") 2>/dev/null || echo "No process found on port $1"
 }
 
-## nix profile shorthands
+## nix aliases
+alias conf="micro $HOME/.config/home-manager/home.nix"
+alias npl="nix profile list"
+alias nix-clean="nix-collect-garbage && home-manager expire-generations"
+alias switch="home-manager switch --impure && nix-clean"
+
+### nix profile shorthands
 nps() {
   if [ -z "$1" ]; then
     echo "Usage: nps <package-name>"
@@ -135,4 +135,45 @@ npr() {
     return 1
   fi
   nix profile remove "$1"
+}
+
+## btrfs alises / shortcuts
+bt:snapshot() {
+    if [ -z "$1" ]; then
+        echo "Usage: btrfs:snapshot <target_directory>"
+        return 1
+    fi
+    sudo btrfs subvolume snapshot -r / "$1"
+    echo "Snapshot of / created at $1"
+}
+
+# 2. Delete a subvolume at a specified directory
+bt:delete() {
+    if [ -z "$1" ]; then
+        echo "Usage: btrfs:delete <snapshot_directory>"
+        return 1
+    fi
+
+    # Check if attempting to delete `/` or `/home`
+    if [[ "$1" == "/" || "$1" == "/home" ]]; then
+        echo "Error: Cannot delete critical subvolume $1"
+        return 1
+    fi
+
+    sudo btrfs subvolume delete "$1"
+    echo "Deleted snapshot at $1"
+}
+
+# 3. Check the size of a specific subvolume
+bt:size() {
+    if [ -z "$1" ]; then
+        echo "Usage: btrfs:size <subvolume_directory>"
+        return 1
+    fi
+    sudo btrfs filesystem du -s "$1"
+}
+
+# 4. List all subvolumes and their sizes
+bt:list() {
+    sudo btrfs subvolume list -t /
 }
