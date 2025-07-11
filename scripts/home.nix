@@ -23,20 +23,20 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-	s.fnm
-	s.zola
-	u.lazydocker
-	u.fastfetch
-	s.fx
-	u.sfz
-	s.watchexec
-	s.mise
-	u.yt-dlp
-	u.monolith
-	u.odin
-	u.zig
-	s.uv
-	s.deno
+    s.fnm
+    s.zola
+    u.lazydocker
+    u.fastfetch
+    s.fx
+    u.sfz
+    s.watchexec
+    s.mise
+    u.yt-dlp
+    u.monolith
+    u.odin
+    u.zig
+    s.uv
+    s.deno
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
