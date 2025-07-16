@@ -19,6 +19,11 @@ alias apt:update="sudo apt update && sudo apt autoclean && sudo apt clean && sud
 alias rmm='rm -rf'
 alias hosts='cat $HOME/.ssh/config'
 alias pw="pwgen -c -n -y -s -B 16 1 | tr -d '\n' | tee >(wl-copy) && echo"
+alias plex:start="sudo systemctl start plexmediaserver.service"
+alias plex:stop="sudo systemctl stop plexmediaserver.service"
+alias plex:status="sudo systemctl status plexmediaserver.service"
+alias sunshine:start="systemctl --user start sunshine"
+alias sunshine:stop="systemctl --user stop sunshine"
 
 ## git aliases
 alias push='git push origin $(git branch --show-current)'
