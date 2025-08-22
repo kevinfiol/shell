@@ -19,6 +19,8 @@ alias apt:update="sudo apt update && sudo apt autoclean && sudo apt clean && sud
 alias rmm='rm -rf'
 alias hosts='cat $HOME/.ssh/config'
 alias pw="pwgen -c -n -y -s -B 16 1 | tr -d '\n' | tee >(wl-copy) && echo"
+
+# services
 alias plex:start="sudo systemctl start plexmediaserver.service"
 alias plex:stop="sudo systemctl stop plexmediaserver.service"
 alias plex:status="sudo systemctl status plexmediaserver.service"
@@ -26,6 +28,11 @@ alias sunshine:start="systemctl --user start sunshine"
 alias sunshine:stop="systemctl --user stop sunshine"
 alias slideshow="feh --recursive --randomize --slideshow-delay 8 --image-bg black --scale-down --zoom max --geometry"
 alias docker:clean="docker container prune -f && docker image prune -f -a && docker system prune -f -a"
+alias keyd:start="sudo systemctl start keyd"
+alias keyd:stop="sudo systemctl stop keyd"
+alias keyd:monitor="sudo keyd monitor"
+alias keyd:reload="sudo keyd reload"
+alias keyd:edit="sudo micro /etc/keyd/default.conf"
 
 ## git aliases
 alias push='git push origin $(git branch --show-current)'
