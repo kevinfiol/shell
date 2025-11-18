@@ -4,6 +4,9 @@ export GPG_TTY=$(tty)
 export NIXPKGS_ALLOW_UNFREE=1
 # configure git config location
 export GIT_CONFIG_GLOBAL="$HOME/me/.gitconfig"
+# use less as pagers (mainly for psql)
+export PAGER='less -S'
+
 
 # convenience aliases
 alias m='micro'
@@ -19,6 +22,7 @@ alias apt:update="sudo apt update && sudo apt autoclean && sudo apt clean && sud
 alias rmm='rm -rf'
 alias hosts='cat $HOME/.ssh/config'
 alias pw="pwgen -c -n -y -s -B 16 1 | tr -d '\n' | tee >(wl-copy) && echo"
+alias postgres="psql postgresql://kevin:hunter2@localhost:5433/postgres"
 
 # services
 alias plex:start="sudo systemctl start plexmediaserver.service"
