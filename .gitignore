@@ -10,6 +10,9 @@
 !/configs
 !/configs/*
 
+# home-level config files
+!/.psqlrc
+
 # ignore work-specific profile and secrets
 /.env.sh
 /.profile-work.sh

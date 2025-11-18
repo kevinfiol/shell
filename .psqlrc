@@ -1,0 +1,7 @@
+\set ON_ERROR_ROLLBACK interactive
+\set COMP_KEYWORD_CASE lower
+\set HISTFILE ~/.psql_history- :USER - :HOST - :PORT - :DBNAME
+
+\pset pager on
+\pset null '(null)'
+\x

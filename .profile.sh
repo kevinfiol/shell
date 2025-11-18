@@ -6,7 +6,8 @@ export NIXPKGS_ALLOW_UNFREE=1
 export GIT_CONFIG_GLOBAL="$HOME/me/.gitconfig"
 # use less as pagers (mainly for psql)
 export PAGER='less -S'
-
+# configure psqlrc location
+export PSQLRC="$HOME/me/.psqlrc"
 
 # convenience aliases
 alias m='micro'
