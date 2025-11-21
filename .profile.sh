@@ -24,6 +24,7 @@ alias rmm='rm -rf'
 alias hosts='cat $HOME/.ssh/config'
 alias pw="pwgen -c -n -y -s -B 16 1 | tr -d '\n' | tee >(wl-copy) && echo"
 alias postgres="psql postgresql://kevin:hunter2@localhost:5433/postgres"
+alias sqlite="sqlite3 -column -header -nullvalue \"(NULL)\" -cmd \".mode box --wrap 50 -ww\" -cmd \".width auto\""
 
 # services
 alias plex:start="sudo systemctl start plexmediaserver.service"
